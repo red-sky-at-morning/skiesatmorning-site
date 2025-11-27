@@ -61,7 +61,7 @@ function motd() {
         if (!out) {
             out = messages["_"];
         }
-        console.log(out);
+        // console.log(out);
         let motdEl = document.getElementById("motd");
         motdEl.innerHTML = `<p>${out}</p>`;
     });
@@ -76,7 +76,7 @@ function toggleFooter() {
     } else {
         collapsable.style.display = "inline-block";
     }
-    console.log(button.innerHTML);
+    // console.log(button.innerHTML);
     
     if (button.innerHTML !== "<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>") {
         button.innerHTML = "<i class=\"fa fa-chevron-left\"></i>";
@@ -91,7 +91,7 @@ const tags = getPageTags();
 
 const headerEl = `
         <div id="header">
-        <p>${document.title.replace(" | midnight", "")}</p>
+        <p>${document.title.replace(" | red skies at morning", "")}</p>
         <vl>&nbsp</vl>
         <div id="page-tags">${tags}</div>
         <vl>&nbsp</vl>
