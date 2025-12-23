@@ -104,11 +104,7 @@ const footerEl = `
         <div class="collapsable">
         <a href="/">home</a>
         <vl>&nbsp</vl>
-        <a href="/writing">writing</a>
-        <vl>&nbsp</vl>
-        <a href="/world">world</a>
-        <vl>&nbsp</vl>
-        <a href="/hb">homebrew</a>
+        <a href="https://pink.skiesatmorning.com/">akkoma</a>
         <vl>&nbsp</vl>
         </div>
         <button class="footer-toggle" onclick="toggleFooter()"><i class="fa fa-chevron-left"></i></button>

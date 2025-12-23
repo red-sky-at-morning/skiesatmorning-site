@@ -35,6 +35,7 @@ async function getFeed() {
 }
 
 const articleWrapper = `
+<div>
 <div class="article" style="width: 23vw">
     <div class="article-header">
         <div class="article-header-tab">
@@ -45,7 +46,15 @@ const articleWrapper = `
         %{article-content}
     </div>
 </div>
+</div>
 `;
+
+const mediaWrappers = {
+    image: "<img src=$1>",
+    gifv: "<img src=$1>",
+    video: "<video src=$1>",
+    audio: "<audio src=$1 type=audio/$2>"
+}
 
 function formatData(data, feed) {
     if (!(data.constructor === Array)) {
@@ -54,9 +63,25 @@ function formatData(data, feed) {
 
     console.log(data)
 
-    let title = `<p><a href=${data[0].url}>${data[0].account.display_name}</a></p>`
-    let content = `<p>${data[0].content}</p>`
-    let htmlString = articleWrapper.replace("%{article-title}", title).replace("%{article-content}", content)
+    let htmlString = ""
+    data.forEach(element => {
+        let title = `<img src=${element.account.avatar} style="max-width:25px;max-height:25px;"><p><a href=${element.url} style="padding-vertical:-2px;">${element.account.display_name}</a></p>`
+        let content = `<p>${element.content}</p>`
+        let mediaString = ""
+        if (element.media_attachments) {
+            console.log(element.media_attachments)
+            element.media_attachments.forEach(attachment => {
+                let wrapper = mediaWrappers[attachment.type]
+                wrapper = wrapper.replace("$1", attachment.url)
+                if (attachment.type == "audio") {
+                    wrapper = wrapper.replace("$2", attachment.meta.audio_encode)
+                }
+                mediaString = mediaString + wrapper
+            })
+        }
+
+        htmlString = htmlString + articleWrapper.replace("%{article-title}", title).replace("%{article-content}", content + mediaString)
+    });
     feed.innerHTML = htmlString
 }
 
