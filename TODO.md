@@ -1,0 +1,4 @@
+- [ ] main page (about + recent updates)
+- [ ] blog
+- [ ] gallery (poems + art)
+- [ ] world ()
