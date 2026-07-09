@@ -2,8 +2,14 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     if (document.body.classList.contains("no-layout")) return;
-    document.body.insertAdjacentHTML("afterbegin", headerEl);
-    document.body.insertAdjacentHTML("beforeend", footerEl);
+    let els = document.querySelector("[name~=layout]").content.split(" ")
+    console.log(els)
+    if (!els.includes("no-header")) {
+        document.body.insertAdjacentHTML("afterbegin", headerEl);
+    }
+    if (!els.includes("no-footer")) {
+        document.body.insertAdjacentHTML("beforeend", footerEl);
+    }
 
     initActiveLinks();
     motd();
@@ -77,7 +83,7 @@ function toggleFooter() {
         collapsable.style.display = "inline-block";
     }
     // console.log(button.innerHTML);
-    
+
     if (button.innerHTML !== "<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i>") {
         button.innerHTML = "<i class=\"fa fa-chevron-left\"></i>";
     } else {
@@ -90,27 +96,20 @@ const tags = getPageTags();
 // console.log(message);
 
 const headerEl = `
-        <div id="header">
-        <p>${document.title.replace(" | red skies at morning", "")}</p>
-        <vl>&nbsp</vl>
-        <div id="page-tags">${tags}</div>
-        <vl>&nbsp</vl>
-        <div id="motd"></div>
-        </div>
-    `;
+<div id="header">
+    <p>${document.title.replace(" | red skies at morning", "")}</p>
+    <vl>&nbsp</vl>
+    <div id="page-tags">${tags}</div>
+    <vl>&nbsp</vl>
+    <div id="motd"></div>
+</div>
+`;
 
 const footerEl = `
-        <div id="footer">
-        <div class="collapsable">
+<div id="footer">
+    <div class="collapsable">
         <a href="/">home</a>
-        <vl>&nbsp</vl>
-        <a href="/writing">writing</a>
-        <vl>&nbsp</vl>
-        <a href="/world">world</a>
-        <vl>&nbsp</vl>
-        <a href="/hb">homebrew</a>
-        <vl>&nbsp</vl>
-        </div>
-        <button class="footer-toggle" onclick="toggleFooter()"><i class="fa fa-chevron-left"></i></button>
-        </div>
-    `;
+    </div>
+    <button class="footer-toggle" onclick="toggleFooter()"><i class="fa fa-chevron-left"></i></button>
+</div>
+`;

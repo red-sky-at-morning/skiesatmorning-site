@@ -1,9 +1,10 @@
 {
     "messages":{
         "main":"shatter the skyline!",
-        "writing":"",
-        "world":"",
-        "homebrew":"",
-        "_":"and when Alexander saw the breadth of his domain, he wept, for there were no more worlds to conquer."
-    }
+        "blog":"",
+        "gallery":"the mirrors burn when i pass",
+        "world":"the world beckons. answer its call?",
+        "_":"the thoughts it gives me leave me wishing"
+    },
+    "frontpage": "folder/foo"
 }
