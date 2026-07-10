@@ -57,6 +57,13 @@ body .content {
 }
 
 
+.article h1 {
+    color: #cad3f5;
+    font-family: Miracode;
+    font-size: 18px;
+    margin:8px;
+}
+
 .article-header h1 {
     display: inline-block;
     font-family: Miracode;
@@ -91,6 +98,17 @@ body .content {
     text-align: left;
     margin: 2vw;
     vertical-align: top;
+    white-space: normal;
+}
+
+.hori-scroll {
+    white-space: nowrap;
+    overflow-x: overlay;
+    min-height:max-content;
+}
+
+.hori-scroll::webkit-scrollbar {
+    position: fixed;
 }
 
 .article-content {
@@ -137,13 +155,13 @@ body .content {
     padding:4px;
 }
 
-.pare {
+.note {
     color: #aab3d5;
     font-size: 14px;
     margin: 4px 0px;
 }
 
-.pare a {
+.note a {
     color: #c48d00;
     font-size: 14px;
     margin: 4px 0px;
@@ -206,6 +224,16 @@ body .content {
     margin-right: 20px;
     margin-top: 20px;
     float: right;
+}
+
+.vl {
+    height: 60vh;
+    width:5px;
+    margin: 20px 0px;
+    border-radius: 15px;
+    display:inline-block;
+    box-sizing: border-box;
+    background-color:#c4ad09;
 }
 
 /* Header */
