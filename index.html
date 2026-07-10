@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link href="/style/style.css" rel="stylesheet" type="text/css" media="all" />
-    <script src="https://kit.fontawesome.com/2180c4b06b.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2180c4b06b.js"></script>
 
     <title>home | red skies at morning</title>
-    <meta name="tags" content="main, feed" />
-    <meta name="layout" content="no-footer" />
+    <meta name="tags" content="main, about" />
+    <!-- <meta name="layout" content="no-footer" /> -->
     <script src="scripts/layout.js"></script>
     <script src="scripts/password.js"></script>
+    <script src="scripts/collapse.js"></script>
     <!-- <script src="/scripts/feed.js"></script> -->
 </head>
+
 <body>
     <div class="background-image"></div>
     <div class="content">
-        <div class="article" style="width: 20vw; vertical-align: baseline;">
+        <div class="article" style="width: 20vw;">
             <div class="article-header">
                 <div class="article-header-tab">
                     <h1 id="pages">pages</h1>
@@ -28,9 +30,15 @@
                 </a>
             </div>
             <div class="article-content">
-                <p></p>
+                <p>
+                <ul>
+                    <li>Home</li>
+                    <li><a href="/pronouns.html">Pronouns</a></li>
+                </ul>
+                </p>
             </div>
-        </div><div class="article" style="vertical-align: baseline;">
+        </div>
+        <div class="article" style="width:40vw;">
             <div class="article-header">
                 <div class="article-header-tab">
                     <h1 id="about">about</h1>
@@ -40,11 +48,73 @@
                 </a>
             </div>
             <div class="article-content">
-                <img src="https://blue.skiesatmorning.com/shr/ff67deuw7ceg/pfp_sky.png" style="float:right;width:100px;">
-                <p></p>
-                <input class="password-entry idx-1 redirect-index.html" placeholder="Does the black moon howl?" style="width:15vw; height:24px"></input>
+                <img src="https://blue.skiesatmorning.com/shr/ff67deuw7ceg/pfp_sky.png"
+                    style="float:right;width:100px;">
+                <p>hi! i'm sky redskiesatmorning <span class="pare">(alternatively <a href="/pronouns.html#names">midnight
+                            midnight--sun, Astra, or Dawn</a>, take your pick)</span>. i'm a ████ year old transfem computercatgirl
+                    <span class="pare">(pronouns <a href="/pronouns.html#pronouns">she/they</a> or <a href="/pronouns.html#pronouns">any
+                            other than he/him</a> if you're chill with it)</span>. i'm a programmer, writer, g*mer, and
+                    an avid hater of capitalism, ai, and the government.</p>
+                <hr>
+                <p>this website is hosted using caddy behind a cloudflare tunnel <span class="pare">(similar to the
+                        other subdomains on this site)</span>. the server is running linux mint, mostly because that's
+                    what i installed when i set it up first and i still haven't felt like changing it.</p>
+                <p>the site is written entirely by hand, in pure html, css, and javascript. i learned mostly by reading
+                    the documentation, and from some tutorials like <a
+                        href="https://petrapixel.neocities.org/coding/layout-base-code">petrapixel's layout code</a>,
+                    which i used as a base for my layout code.</p>
+                <p>i'm almost entirely self-taught, out of interest and boredom. most things on here exist because i was
+                    bored. like these password-boxes. the password for this one is <code>Hello World!</code>. try it out
+                    now by typing that in and pressing enter.</p>
+                <input class="password-entry idx-2 alert-Hello_World!" placeholder="exit(0);"
+                    style="width:25%; height:24px"></input>
+                <hr>
+                <p>a lot of my time is spent working on various projects, including my fantasy world, discord bot,
+                    building in minecraft, and poetry (sometimes). you can learn a little more about these in the
+                    dropdowns.</p>
+                <button class="collapsible">about that fantasy world.. <i class="fa fa-chevron-up"></i></button>
+                <div class="collapsable-content" style="display:none">
+                    <p>istera has been my passion project since junior year of high school. it's a space for me to play
+                        around in <span class="pare">(basically just me going 'hey wouldn't that be cool')</span>. it
+                        started with three main pillars <span class="pare">(that have since been expanded, but)</span>:
+                    </p>
+                    <ul>
+                        <li class="li-1"> <i>History is young, and magic is new.</i><br>
+                            <p style="color:#cad3f5; font-size:14px;">much of what used to be known has been lost in
+                                wars or other calamities. there lies much still to find in the world.</p>
+                        </li>
+                        <li class="li-3" style="color:#ea8526"> <i>Magic comes from belief.</i><br>
+                            <p style="color:#cad3f5; font-size:14px;">whether that be a sacred wishing star a thousand
+                                years past, or a humble pet rock, belief can form powerful magic with time.</p>
+                        </li>
+                        <li class="li-4" style="color:#f4bd29"> <i>The Gods are dead, or something close.</i>
+                            <p style="color:#cad3f5; font-size:14px;">the old gods are dead, at the hands of their
+                                worshippers. magic runs wild and free, open to any who can grasp it.</p>
+                        </li>
+                    </ul>
+                </div><br>
+                <button class="collapsible">discord bot? <i class="fa fa-chevron-up"></i></button>
+                <div class="collapsable-content" style="display:none">
+                    <p>eclipsebot was originally supposed to be a bot to track eclipses. ...she still can't do that. she can definitely help you fish, though. and let you perform capitalism. <span class="pare">(wait, what was my stance on capitalism again?)</span> her code - for both the old v1 and currently in-dev v2 - are availible <a href="https://github.com/red-sky-at-morning/discord_bot">github</a>.</p>
+                </div><br>
+                <button class="collapsible">those minecraft builds? <i class="fa fa-chevron-up"></i></button>
+                <div class="collapsable-content" style="display:none">
+                    <p>i love building! especially in modded creative mode, it's an easy way for me to work out how a space should work. here's a few examples of things i've built:</p>
+                    <img src="https://blue.skiesatmorning.com/shr/p74a0n5arufw/minecraft_01.png" style="display:inline-block; width:47%"/>
+                    <img src="https://blue.skiesatmorning.com/shr/p74a0n5arufw/minecraft_02.png" style="display:inline-block; width:47%"/>
+                    <img src="https://blue.skiesatmorning.com/shr/p74a0n5arufw/minecraft_04.png" style="display:inline-block; width:47%"/>
+                    <img src="https://blue.skiesatmorning.com/shr/p74a0n5arufw/minecraft_03.png" style="display:inline-block; width:47%"/>
+                </div><br>
+                <button class="collapsible">your poetry? <i class="fa fa-chevron-up"></i></button>
+                <div class="collapsable-content" style="display:none">
+                    <p>i haven't written as much recently, but it is something i enjoy. i've written two collections, <a>Dawn//Dusk</a> and <a>Earth//Sky</a>, both over the span of about a month. my favorite poem from each is <i>Down the Winding Road</i> from Dawn//Dusk and <i>Stormfront</i> from Earth//Sky.<br><span class="pare"><a>(what else can this be, if not love?)</a></span></p>
+                </div>
+                <hr>
+                <input class="password-entry idx-1 redirect-profile" placeholder="Does the black moon howl?"
+                    style="width:40%; height:24px; color:#a5adcb; background:#24273a; border-color:#363a4f"></input>
             </div>
-        </div><div class="article" style="width: 20vw; vertical-align: baseline;">
+        </div>
+        <div class="article" style="width: 20vw;">
             <div class="article-header">
                 <div class="article-header-tab">
                     <h1 id="recent">recent</h1>
@@ -57,7 +127,6 @@
                 <p></p>
             </div>
         </div>
-    </div><div id="feed-container" class="content">
     </div>
 </body>
 

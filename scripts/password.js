@@ -31,6 +31,8 @@ function readyInputs(inputs, encoder) {
                         switch(type[0]) {
                             case "redirect":
                                 window.location.replace("/"+type[1])
+                            case "alert":
+                                alert(type[1].replace("_", " "))
                             case "default":
                                 console.log("unexpected password field type")
                         }

@@ -2,7 +2,12 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     if (document.body.classList.contains("no-layout")) return;
-    let els = document.querySelector("[name~=layout]").content.split(" ")
+    let els = []
+    try {
+        els = document.querySelector("[name~=layout]").content.split(" ")
+    } catch (TypeError) {
+    }
+    
     console.log(els)
     if (!els.includes("no-header")) {
         document.body.insertAdjacentHTML("afterbegin", headerEl);
@@ -25,7 +30,7 @@ function initActiveLinks() {
         } else {
             // other pages
             if (elHref != "/" && elHref != "/index.html")
-                if (window.location.href.startsWith("https://m1dnight__sun.neocities.org" + elHref)) el.classList.add("active");
+                if (window.location.href.startsWith("https://red.skiesatmorning.com" + elHref)) el.classList.add("active");
         }
     });
 }
@@ -38,7 +43,7 @@ function getNestingString() {
     return ".." + "/..".repeat(numberOfSlahes - 2);
 }
 
-const colors = ["#cb2956", "#ea8526", "#f4bd29", "#991c8d"]
+const colors = ["#cb2956", "#ea8526", "#f4bd29", "#991c8d", "#cad3f5"]
 function getPageTags() {
     let tags = document.querySelector("[name~=tags]").content
     const tagsList = tags.split(",")
@@ -46,8 +51,11 @@ function getPageTags() {
     let tags_string = ""
     tagsList.forEach((tag, i) => {
         tag = tag.trim()
+        if (i > colors.length) {
+            i = colors.length - 1
+        }
         let color = colors[i]
-        tags_string += (`<div class=page-tag style="background-color:${color}">#${tag}</div>`)
+        tags_string += (`<div class="page-tag" style="background-color:${color}">#${tag}</div>`)
     });
     return tags_string
 }
@@ -75,8 +83,8 @@ function motd() {
 
 function toggleFooter() {
     let footer = document.getElementById("footer");
-    let collapsable = footer.children[0];
-    let button = footer.children[1];
+    let collapsable = footer.children[1];
+    let button = footer.children[0];
     if (collapsable.style.display !== "none") {
         collapsable.style.display = "none";
     } else {
@@ -107,9 +115,9 @@ const headerEl = `
 
 const footerEl = `
 <div id="footer">
-    <div class="collapsable">
+    <button class="footer-toggle" onclick="toggleFooter()"><i class="fa fa-chevron-left"></i></button>
+    <div class="collapsable" style="width:auto;">
         <a href="/">home</a>
     </div>
-    <button class="footer-toggle" onclick="toggleFooter()"><i class="fa fa-chevron-left"></i></button>
 </div>
 `;

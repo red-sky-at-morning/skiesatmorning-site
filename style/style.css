@@ -39,7 +39,7 @@ body .content {
 .article-header {
     height: min-content;
     background-color: #292d3e;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 15px 15px 0px 0px;
     border-bottom: 2px solid #f4bd29;
     padding-bottom: 0px;
 }
@@ -62,12 +62,14 @@ body .content {
     font-family: Miracode;
     font-size: 16px;
     margin: 8px;
-    color: white;
+    color: #cad3f5;
 }
 
 .article-header-tab {
-    width: 10em;
-    margin-left: 15px;
+    width: min-content;
+    min-width: 7em;
+    margin-left: 10px;
+    margin-top: 10px;
     box-sizing: border-box;
     padding: 1px;
     border-radius: 10px 10px 0px 0px;
@@ -95,17 +97,19 @@ body .content {
     padding: 15px;
     margin-top: 0px;
     background-color: #292d3e;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 15px 15px;
     height: min-content;
     font-family: Firacode;
 }
 
 .article-content img {
     max-width: 19vw;
+    border-radius: 10px;
+    margin: 0px 5px
 }
 
 .article p {
-    color: white;
+    color: #cad3f5;
     margin: 8px;
 }
 
@@ -120,18 +124,87 @@ body .content {
     /* border-color: #cb2956; */
     border: #cb2956 2px solid;
     font-family:FiraCode;
+    margin:4px;
 }
 
 .article input::placeholder {
     font-family: Firacode;
 }
 
+.article code {
+    background-color: #1e2030;
+    border-radius: 5px;
+    padding:4px;
+}
+
+.pare {
+    color: #aab3d5;
+    font-size: 14px;
+    margin: 4px 0px;
+}
+
+.pare a {
+    color: #c48d00;
+    font-size: 14px;
+    margin: 4px 0px;
+}
+
+.article hr {
+    color: #f4bd29;
+}
+
+.article ul {
+    padding-left:0px
+}
+
+.article li {
+    color: #cad3f5;
+    margin: 8px;
+    list-style-type:none;
+}
+
+.article li:before {
+    content:"- "
+}
+
+.article li.li-1 {
+    color:#cb2956;
+}
+
+.article li.li-1:before {
+    content: ""
+}
+
+.article li.li-2 {
+    color:#ea8526;
+}
+
+.article li.li-2:before {
+    content: ""
+}
+
+.article li.li-3 {
+    color:#f4bd29;
+}
+
+.article li.li-3:before {
+    content: ""
+}
+
+.article li.li-4 {
+    color:#991c8d;
+}
+
+.article li.li-4:before {
+    content: ""
+}
+
 .action-dot {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    margin-right: 10px;
-    margin-top: 10px;
+    margin-right: 20px;
+    margin-top: 20px;
     float: right;
 }
 
@@ -260,6 +333,17 @@ vl {
 
 .collapsable {
     display: inline-block;
+    width:100%;
+}
+.collapsable hr {
+    display:inline-block;
+    width:90%;
+}
+
+.collapsable-content {
+    background-color: #1e2030;
+    border-radius:10px;
+    padding:10px;
 }
 
 button.footer-toggle {
@@ -271,6 +355,18 @@ button.footer-toggle {
     cursor: pointer;
     background-color: #00000000;
     border: none;
+}
+
+button.collapsible {
+    display: inline-block;
+    margin: 7px;
+    color: #f4bd29;
+    cursor: pointer;
+    background-color: #00000000;
+    border: none;
+
+    font-family:Miracode;
+    font-size:14px;
 }
 
 /* Background */
