@@ -16,13 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.insertAdjacentHTML("beforeend", footerEl);
     }
 
-    initActiveLinks();
     motd();
+    initActiveLinks();
 });
 function initActiveLinks() {
     const pathname = window.location.pathname;
     [...document.querySelectorAll("a")].forEach((el) => {
-        const elHref = el.getAttribute("href").replace(".html", "").replace("/public", "");
+        var elHref = el.getAttribute("href")
+        if (elHref === null) {
+            elHref = ""
+        } 
+        elHref = elHref.replace(".html", "").replace("/public", "");
 
         if (pathname == "/" || pathname == "") {
             // homepage
