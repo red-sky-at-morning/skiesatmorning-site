@@ -38,7 +38,7 @@ body .content {
 
 .article-header {
     height: min-content;
-    background-color: #292d3e;
+    background-color: #24273a;
     border-radius: 15px 15px 0px 0px;
     border-bottom: 2px solid #f4bd29;
     padding-bottom: 0px;
@@ -80,7 +80,7 @@ body .content {
     box-sizing: border-box;
     padding: 1px;
     border-radius: 10px 10px 0px 0px;
-    /* background-color: #292d3e; */
+    /* background-color: #24273a; */
     background-color: #c48d00;
     border: 2px solid #f4bd29;
     border-bottom: 0px;
@@ -93,7 +93,7 @@ body .content {
     display: inline-block;
     width: 35vw;
     padding: 0px;
-    background-color: #292d3ee3;
+    background-color: #24273ae3;
     border-radius: 25px;
     padding: 20px;
     text-align: left;
@@ -115,7 +115,7 @@ body .content {
 .article-content {
     padding: 15px;
     margin-top: 0px;
-    background-color: #292d3e;
+    background-color: #24273a;
     border-radius: 0px 0px 15px 15px;
     height: min-content;
     font-family: Firacode;
@@ -228,7 +228,7 @@ body .content {
 }
 
 .vl {
-    height: 60vh;
+    height: 75%;
     width:5px;
     margin: 20px 0px;
     border-radius: 15px;
@@ -239,10 +239,10 @@ body .content {
 
 /* Header */
 vl {
-    background-color: #292d3e;
+    background-color: #24273a;
     display: inline-block;
     width: 2px;
-    height: auto;
+    height: 75%;
 }
 
 #feed-container {
@@ -320,12 +320,14 @@ vl {
     position: fixed;
     height: 40px;
     /* width:100%; */
+    width:fit-content;
     bottom: 0;
     left: 0;
 
-    padding-left: 10px;
-    padding-top: 0px;
-    padding-bottom: 5px;
+    vertical-align: middle;
+    /* padding-left: 10px; */
+    /* padding-top: 0px; */
+    /* padding-bottom: 5px; */
 
     margin-left: 5px;
     margin-bottom: 5px;
@@ -337,10 +339,15 @@ vl {
     width: calc(auto, size);
 }
 
+#footer * {
+    vertical-align: center;
+}
+
 #footer vl {
     display: inline-block;
-    height: 20px;
-    margin-top: 8px;
+    height: 75%;
+    /* margin-top: 8px; */
+    margin:5px
 }
 
 #footer p {
@@ -375,11 +382,19 @@ vl {
     padding:10px;
 }
 
+button {
+    background-color: #363a4f;
+    border: 2px solid #494d64;
+    border-radius: 10px;
+    /* padding: 5px 10px; */
+}
+
 button.footer-toggle {
     display: inline-block;
-    margin-left: 2px;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin:8px;
+    /* margin-left: 2px; */
+    /* margin-top: 10px; */
+    /* margin-right: 10px; */
     color: #200744;
     cursor: pointer;
     background-color: #00000000;

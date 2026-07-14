@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const links = document.getElementsByClassName("errorcat");
-    let code = window.location.search.replace("?src=", "")
+    let code = window.location.hash
     if (!code) {
         code = "404"
     }

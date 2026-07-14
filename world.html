@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/style/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/style/world.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="https://kit.fontawesome.com/2180c4b06b.js"></script>
+
+    <title>welcome | red skies at morning</title>
+    <meta name="tags" content="world" />
+    <!-- <meta name="layout" content="no-footer" /> -->
+    <script src="scripts/layout.js"></script>
+    <script src="scripts/collapse.js"></script>
+    <script src="scripts/delayed_load.js"></script>
+    <!-- <script src="/scripts/feed.js"></script> -->
+</head>
+
+<body>
+    <div class="background-image"></div>
+    <div class="content">
+        <div class="article" style="width: 15vw;">
+            <div class="article-header">
+                <div class="article-header-tab">
+                    <h1 id="pages">pages</h1>
+                </div>
+                <a href="/index.html#pages">
+                    <div class="action-dot" style="background-color: #49ace3;"></div>
+                </a>
+            </div>
+            <div class="article-content">
+                <p>
+                    Istera
+                <ul>
+                    <li>Welcome</li>
+                </ul>
+                <hr>
+                </p>
+                <p>
+                    Other Spaces
+                    <br>
+                    <li><a href="/">Home</li>
+                </p>
+            </div>
+        </div>
+        <div class="article" style="width:60vw;">
+            <div class="article-header">
+                <div class="article-header-tab">
+                    <h1 id="about">welcome</h1>
+                </div>
+                <a href="/index.html#about">
+                    <div class="action-dot" style="background-color: #49ace3;"></div>
+                </a>
+            </div>
+            <div class="article-content">
+                <button onclick="override()">
+                    <p style="margin:2px">skip animation</p>
+                </button>
+                <button onclick="redir_to_hideall()">
+                    <p style="margin:2px">hide dialogue</p>
+                </button>
+                <div id="delay-load">
+                    <div class="narration">
+                        <p>
+                            you wake in a strange place. the first thing you notice is the hard-packed dirt underneath
+                            your hands, as you come to in a half-sitting pose. the room is well-lit, with flickering
+                            sconces on the thick log walls. one wall is covered entirely with several large maps, with
+                            pins pushed into them at locations you can't make out. there's a small window in the other
+                            wall, with several books open on a sturdy desk underneath it. a spark of red light flits
+                            over the pages, struggling to turn one as you watch.
+                        </p>
+                    </div>
+                    <div class="narration">
+                        <p>
+                            the sprite flickers over its books, seemingly having missed your presence. as you begin to
+                            move, it jolts suddenly - startled, possibly - before floating closer to you. it pulses as
+                            it speaks.
+                        </p>
+                    </div>
+                    <div class="sunsprite-box">
+                        <p>
+                            oh! i wasn't expecting visitors...
+                        </p>
+                    </div>
+                    <div class="sunsprite-box">
+                        <p>
+                            i'm, um- i'm called sunsprite
+                        </p>
+                    </div>
+                    <div class="sunsprite-box">
+                        <p>
+                            my court, they- they asked me to...<br>
+                            i have it somewhere around here...
+                        </p>
+                    </div>
+                    <div class="narration">
+                        <p>
+                            she darts back over to the desk, poking around the papers strewn around. after a tick, it
+                            picks up a scrap of paper and flies back over to you, considerably slower this time.
+                        </p>
+                    </div>
+                    <div class="sunsprite-box">
+                        <p>
+                            'you are not to return to the library of the court of stars until such a time as you have
+                            researched and learned all there is to know of the planes and the peoples that live therein'
+                        </p>
+                    </div>
+                    <div class="narration">
+                        <p>
+                            she lets the paper drop into your lap.
+                        </p>
+                    </div>
+                    <div class="sunsprite-box">
+                        <p>
+                            so i've been... learning everything i can. every place, location, the people that live
+                            there...
+                            <br>
+                            it's been going kinda slow.
+                        </p>
+                    </div>
+                    <div class="sunsprite-box">
+                        <p>
+                            there's a groundskeeper that comes around sometimes that.. helps me stay organized.
+                            <br><span class="note">it's very hard to move these books...</span>
+                        </p>
+                    </div>
+                    <div class="sunsprite-box">
+                        <p>
+                            but, um, feel free to look around!
+                            it.. might help me finish my task sooner!
+                        </p>
+                    </div>
+                    <br>
+                    <hr><br>
+                    <div class="narration" id="navigation">
+                        <button class="collapsible">check over sunsprite's notes? <i
+                                class="fa fa-chevron-up"></i></button>
+                        <div class="collapsable-content" style="display:none; width:auto;">
+                            <p>
+                                her notes are somewhat messy, but readable. there are a few scrawled questions in an ink
+                                that
+                                is somehow the same color as her. they're mostly collected on one piece of paper:
+                            </p>
+                            <hr>
+                            <h1>ISTERA</h1>
+                            <p style="font-style:normal; font-size:16px; color:#cad3f5">
+                                <i>the land of stars</i><br>
+                                <span class="note">(i don't know who coined this?)</span><br><br>
+                                major notes:
+                            <ul>
+                                <li class="li-1"> <i>History is young, and magic is new.</i><br>
+                                    <p style="color:#cad3f5; font-size:14px; font-style: normal;">much of what used to be known has been
+                                        lost in
+                                        wars or other calamities. there lies much still to find in the world.</p>
+                                </li>
+                                <li class="li-3" style="color:#ea8526"> <i>Magic comes from belief.</i><br>
+                                    <p style="color:#cad3f5; font-size:14px; font-style: normal;">whether that be a sacred wishing star a
+                                        thousand
+                                        years past, or a humble pet rock, belief can form powerful magic with time.</p>
+                                </li>
+                                <li class="li-4" style="color:#f4bd29"> <i>The Gods are dead, or something close.</i>
+                                    <p style="color:#cad3f5; font-size:14px; font-style: normal;">the old gods are dead, at the hands of
+                                        their
+                                        worshippers. magic runs wild and free, open to any who can grasp it.</p>
+                                </li>
+                            </ul>
+                            </p>
+                        </div><br>
+                        <button class="collapsible">inspect the wall of maps? <i class="fa fa-chevron-up"></i></button>
+                        <div class="collapsable-content" style="display:none">
+                            <p>
+                                <a href="world/planets">look at the diagram of the solar system?</a>
+                                <br><br>
+                                examine the model of the great wheel
+                            </p>
+                        </div>
+                        <br>
+                        <button class="collapsible">approach the desk? <i class="fa fa-chevron-up"></i></button>
+                        <div class="collapsable-content" style="display:none">
+                            <p>
+                                pick up the book titled, "On Essences" (with a sticky note reading, "MAGIC")
+                                <br><br>
+                                pick up the book labelled, "Cassandra's Catalog of Creatures (COMPLETE EDITION)"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

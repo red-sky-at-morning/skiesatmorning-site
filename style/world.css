@@ -1,0 +1,67 @@
+.sunsprite-box {
+    background-color: #9b0026;
+    border: 2px solid #cb2956;
+    border-radius: 10px;
+    padding: 7px;
+    margin: 10px 5px;
+}
+
+#delay-load .div {
+    display:none;
+}
+
+.narration {
+    background-color: #1e2030;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.narration p {
+    color: #aab3d5;
+    font-size: 14px;
+    margin: 4px 0px;
+    font-style:italic;
+}
+
+.narration a {
+    color: #c48d00;
+    font-size: 14px;
+    margin: 4px 0px;
+    font-style:italic;
+}
+
+.narration button {
+    color: #c48d00;
+    font-size: 14px;
+    margin: 4px 0px;
+    font-style:italic;
+}
+
+.narration .note {
+    color:#cb2956;
+}
+
+.narration .collapsable-content {
+    width:fit-content;
+    background-color: #181926;
+    border-radius:10px;
+    padding:10px 15px 10px 10px;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

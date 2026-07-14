@@ -30,7 +30,7 @@ function initActiveLinks() {
 
         if (pathname == "/" || pathname == "") {
             // homepage
-            if (elHref == "/" || elHref == "/index.html") el.classList.add("active");
+            if (elHref == "/" || elHref.includes("/index")) el.classList.add("active");
         } else {
             // other pages
             if (elHref != "/" && elHref != "/index.html")
@@ -121,7 +121,7 @@ const footerEl = `
 <div id="footer">
     <button class="footer-toggle" onclick="toggleFooter()"><i class="fa fa-chevron-left"></i></button>
     <div class="collapsable" style="width:auto;">
-        <a href="/">home</a>
+        <a href="/">home</a><vl>&nbsp</vl><a href="/world.html">istera</a>
     </div>
 </div>
 `;
