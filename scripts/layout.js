@@ -149,7 +149,7 @@ const footerEl = `
 <div id="footer">
     <button class="footer-toggle" onclick="toggleFooter()"><i class="fa fa-chevron-left"></i></button>
     <div class="collapsable" style="width:auto;">
-        <a href="/">home</a><vl>&nbsp</vl><a href="world.html">istera</a>
+        <a href="/">home</a><vl>&nbsp</vl><a href="/world.html">istera</a>
     </div>
 </div>
 `;
