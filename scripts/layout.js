@@ -35,8 +35,14 @@ function initActiveLinks() {
             if (elHref == "/" || elHref.includes("/index")) el.classList.add("active");
         } else {
             // other pages
-            if (elHref != "/" && elHref != "/index.html")
-                if (window.location.href.startsWith("https://red.skiesatmorning.com" + elHref)) el.classList.add("active");
+            if (elHref != "/" && elHref != "/index.html") {
+                // console.log(elHref)
+                console.log(window.location.protocol + window.location.host + elHref)
+                if (window.location.href.startsWith(window.location.protocol + "//" + window.location.host + elHref)) {
+                    console.log("active")
+                    el.classList.add("active");
+                }
+            }
         }
     });
 }
@@ -79,7 +85,7 @@ function getPageTags() {
     let tags_string = ""
     tagsList.forEach((tag, i) => {
         tag = tag.trim()
-        i = i%4
+        i = i % 4
         let color = colors[i]
         tags_string += (`<div class="page-tag" style="background-color:${color}">#${tag}</div>`)
     });
