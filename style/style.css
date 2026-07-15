@@ -64,6 +64,13 @@ body .content {
     margin:8px;
 }
 
+.article h2 {
+    color: #cad3f5;
+    font-family: Miracode;
+    font-size: 17px;
+    margin:8px;
+}
+
 .article-header h1 {
     display: inline-block;
     font-family: Miracode;
@@ -396,13 +403,12 @@ button.footer-toggle {
     /* margin-top: 10px; */
     /* margin-right: 10px; */
     color: #200744;
-    cursor: pointer;
     background-color: #00000000;
     border: none;
 }
 
 button.collapsible {
-    display: inline-block;
+    display: block;
     margin: 7px;
     color: #f4bd29;
     cursor: pointer;
@@ -413,9 +419,48 @@ button.collapsible {
     font-size:14px;
 }
 
+button.collapsible h1 {
+    display: inline-block;
+    color: #f4bd29;
+    background-color: #00000000;
+    margin: 0px;
+
+    font-family:Miracode;
+}
+
+button.collapsible h2 {
+    display: inline-block;
+    color: #f4bd29;
+    background-color: #00000000;
+    margin: 5px 0px;
+
+    font-family:Miracode;
+}
+
 /* Background */
 .background-image {
     background-image: url('/assets/day.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position-x: center;
+
+    filter: blur(2px);
+
+    position: fixed;
+    display: block;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    margin: -2.5px;
+    z-index: -1;
+}
+
+.background-image-night {
+    background-image: url('/assets/night.png');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;

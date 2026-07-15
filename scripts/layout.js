@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         els = document.querySelector("[name~=layout]").content.split(" ")
     } catch (TypeError) {
     }
-    
+
     console.log(els)
     if (!els.includes("no-header")) {
         document.body.insertAdjacentHTML("afterbegin", headerEl);
@@ -18,14 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     motd();
     initActiveLinks();
+    initFragments();
 });
+
 function initActiveLinks() {
     const pathname = window.location.pathname;
     [...document.querySelectorAll("a")].forEach((el) => {
         var elHref = el.getAttribute("href")
         if (elHref === null) {
             elHref = ""
-        } 
+        }
         elHref = elHref.replace(".html", "").replace("/public", "");
 
         if (pathname == "/" || pathname == "") {
@@ -39,6 +41,28 @@ function initActiveLinks() {
     });
 }
 
+function initFragments() {
+    let hash = window.location.hash
+    initSpecificFragment(hash)
+}
+
+function initSpecificFragment(id) {
+    [...document.getElementsByClassName("highlighted")].forEach((el) => {
+        el.classList.remove("highlighted")
+    })
+
+    if (id === "") {
+        return;
+    }
+    let fragment = document.getElementById(id.replace("#", ""))
+    if (fragment === null) {
+        console.log("no fragment with id" + id)
+        return;
+    }
+
+    fragment.classList.add("highlighted")
+}
+
 function getNestingString() {
     const currentUrl = window.location.href.replace("http://", "").replace("https://", "").replace("/public/", "/");
     const numberOfSlahes = currentUrl.split("/").length - 1;
@@ -47,7 +71,7 @@ function getNestingString() {
     return ".." + "/..".repeat(numberOfSlahes - 2);
 }
 
-const colors = ["#cb2956", "#ea8526", "#f4bd29", "#991c8d", "#cad3f5"]
+const colors = ["#cb2956", "#ea8526", "#f4bd29", "#991c8d"]
 function getPageTags() {
     let tags = document.querySelector("[name~=tags]").content
     const tagsList = tags.split(",")
@@ -55,9 +79,7 @@ function getPageTags() {
     let tags_string = ""
     tagsList.forEach((tag, i) => {
         tag = tag.trim()
-        if (i > colors.length) {
-            i = colors.length - 1
-        }
+        i = i%4
         let color = colors[i]
         tags_string += (`<div class="page-tag" style="background-color:${color}">#${tag}</div>`)
     });

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/style/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/style/world.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="https://kit.fontawesome.com/2180c4b06b.js"></script>
+
+    <title>welcome | red skies at morning</title>
+    <meta name="tags" content="world" />
+    <!-- <meta name="layout" content="no-footer" /> -->
+    <script src="/scripts/layout.js"></script>
+    <script src="/scripts/collapse.js" <!-- <script src="/scripts/feed.js"></script> -->
+</head>
+
+<body>
+    <div class="background-image-night"></div>
+    <div class="content">
+        <div class="article" style="width: 15vw;">
+            <div class="article-header">
+                <div class="article-header-tab">
+                    <h1 id="pages">pages</h1>
+                </div>
+                <a href="/index.html#pages">
+                    <div class="action-dot" style="background-color: #49ace3;"></div>
+                </a>
+            </div>
+            <div class="article-content">
+                <p>
+                    Istera
+                <ul>
+                    <li><a href="/world.html">Welcome</a></li>
+                    <li>Solar System</li>
+                </ul>
+                <hr>
+                </p>
+                <p>
+                    Other Spaces
+                    <br>
+                    <li><a href="/">Home</a></li>
+                </p>
+            </div>
+        </div>
+        <div class="article" style="width:55vw;">
+            <div class="article-header">
+                <div class="article-header-tab">
+                    <h1 id="about">planets</h1>
+                </div>
+                <a href="/index.html#about">
+                    <div class="action-dot" style="background-color: #49ace3;"></div>
+                </a>
+            </div>
+            <div class="article-content">
+                <img src="/assets/istera-solar_system.png" style="max-width:100%" />
+                <p>
+                    <span class="note">(not to scale)</span>
+                </p>
+                <hr>
+                <h1>the suns</h1>
+                <button class="collapsible">
+                    <h2 style="display:inline-block">Li and Ta</h2> <i class="fa fa-chevron-down"></i>
+                </button>
+                <div class="collapsable-content" style="display:block">
+                    <p>
+                        the two suns at the center of the solar system. Ta is a main sequence star, about 4.5 billion
+                        years old, and provides the majority of light and heat in the solar system. Li is a neutron
+                        star,
+                        significantly smaller than Ta, and about 2.7 billion years old.
+                    </p>
+                </div>
+
+                <button class="collapsible">
+                    <h2 style="display:inline-block">Talador</h2> <i class="fa fa-chevron-down"></i>
+                </button>
+                <div class="collapsable-content" style="display:block">
+                    <p>
+                        Talador is the smallest planet in the solar system, and is mostly desertlike. unlike the other
+                        planets, it orbits only around Li, having one hot season and one cold season depending on its
+                        proximity to Ta in its orbit.
+                    </p>
+                </div>
+                <hr>
+                <h1>the inner solar system</h1>
+                <button class="collapsible">
+                    <h2 style="display:inline-block">Gaia</h2> <i class="fa fa-chevron-down"></i>
+                </button>
+                <div class="collapsable-content" style="display:block">
+                    <p>
+                        Gaia is the most... normal<sup><a href="#note-1"
+                                onclick="javascript:initSpecificFragment('#note-1')">1</a></sup>? planet in the solar
+                        system. it's a rocky ocean planet, with the bulk of its land in its northern hemisphere, and
+                        most of the land on its surface green and habitable. it doesn't have a large starfaring culture,
+                        so its contact with other planets is limited, but it does have at least one starport known to
+                        the public. i have a seperate note for the <a href="/world/gaia.html#continents">gaian
+                            continents</a>.
+                    </p>
+                </div>
+                <button class="collapsible">
+                    <h2 style="display:inline-block">Utori</h2> <i class="fa fa-chevron-down"></i>
+                </button>
+                <div class="collapsable-content" style="display:block">
+                    <p>
+                        Utori is a rocky planet, tidally locked to the suns. it has one moon, also tidally locked<sup><a
+                                href="#note-2" onclick="javascript:initSpecificFragment('#note-2')">2</a></sup>.<br>
+                        ...not much else is known about the planet. its culture is extremely authoritarian, disallowing
+                        and demonizing space travel, and imprisoning offworld travellers who stop there.
+                    </p>
+                </div>
+                <button class="collapsible">
+                    <h2 style="display:inline-block">Eva</h2> <i class="fa fa-chevron-down"></i>
+                </button>
+                <div class="collapsable-content" style="display:block">
+                    <p>
+                        Eva... used to be a rocky ocean planet, like Gaia, but is currently a mass of floating islands
+                        suspended over a sea of churning mist and souls. its orbit is synced with Ril, which it had a
+                        technological treaty with before the War of Admonition. its surface was shattered during the
+                        war, and it is now home to the majority of Radiant Evarin.<br>due to the nature of Eva's
+                        surface, tracking continents is nearly impossible, but i have a note for <a
+                            href="/world/eva.html#regions">notable islands</a>.
+                    </p>
+                </div>
+                <button class="collapsible">
+                    <h2 style="display:inline-block">Admonition</h2> <i class="fa fa-chevron-down"></i>
+                </button>
+                <div class="collapsable-content" style="display:block">
+                    <p>
+                        an artifical asteroid belt created during the War of Admonition. the majority of material is in
+                        the plane between Eva and Ril's orbits, but it has spread out slightly over time. it is mostly
+                        made of artifical material, including ruins of starships, but it has caught natural asteroids
+                        over time.
+                    </p>
+                </div>
+                <hr>
+                <button class="collapsible">
+                    <h2 style="display:inline-block">Ril</h2> <i class="fa fa-chevron-down"></i>
+                </button>
+                <div class="collapsable-content" style="display:block">
+                    <p>
+                        Ril, similarly to Eva used to be a rocky ocean planet. in the War of Admonition, its atmosphere
+                        and magnetosphere were almost completely destroyed, and its core was significantly dimmed,
+                        making it into a dark, cold planet, with breathable air only present in certain controlled zones
+                        - usually around cities.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="article" style="width:15vw;">
+            <div class="article-header">
+                <div class="article-header-tab">
+                    <h1 id="about">comments</h1>
+                </div>
+            </div>
+            <div class="article-content">
+                <div class="sunsprite-box">
+                    <p>
+                        if there's information about the planets not detailed here, i haven't managed to find it yet.
+                    </p>
+                </div>
+                <hr>
+                <div class="sunsprite-box" id="note-1">
+                    <p>
+                        <sup>1</sup> it's the most similar to faerie, in my experience
+                    </p>
+                </div>
+                <div class="sunsprite-box" id="note-2">
+                    <p>
+                        <sup>2</sup> i think this is a coincidence? it's weird, either way
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
