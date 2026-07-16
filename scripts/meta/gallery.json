@@ -2,7 +2,36 @@
     "art": [
     ],
     "poems": [
-        "/gallery/poetry/earth_sky/earth__sky.html"
+        "%cat%Dawn//Dusk",
+        "/gallery/poetry/dawn_dusk/how_the_world_ends.html",
+        "/gallery/poetry/dawn_dusk/down_the_winding_road.html",
+        "/gallery/poetry/dawn_dusk/ode_to_the_stars.html",
+        "/gallery/poetry/dawn_dusk/voice.html",
+        "/gallery/poetry/dawn_dusk/find_me_in_the_stars.html",
+        "/gallery/poetry/dawn_dusk/insignificance.html",
+        "/gallery/poetry/dawn_dusk/we_fight_because.html",
+        "/gallery/poetry/dawn_dusk/songbird.html",
+        "/gallery/poetry/dawn_dusk/i_will_not.html",
+        "/gallery/poetry/dawn_dusk/reflection.html",
+        "/gallery/poetry/dawn_dusk/the_universe_is_kind.html",
+        "/gallery/poetry/dawn_dusk/in_the_dirt.html",
+        "/gallery/poetry/dawn_dusk/love__hope.html",
+        "/gallery/poetry/dawn_dusk/dawn__dusk.html",
+        "%br",
+        "%cat%Earth//Sky",
+        "/gallery/poetry/earth_sky/sunflower.html",
+        "/gallery/poetry/earth_sky/holloway.html",
+        "/gallery/poetry/earth_sky/petrichor.html",
+        "/gallery/poetry/earth_sky/passerby.html",
+        "/gallery/poetry/earth_sky/dewdrop.html",
+        "/gallery/poetry/earth_sky/stormfront.html",
+        "/gallery/poetry/earth_sky/circles.html",
+        "/gallery/poetry/earth_sky/equivalence.html",
+        "/gallery/poetry/earth_sky/passerine.html",
+        "/gallery/poetry/earth_sky/earth__sky.html",
+        "%br",
+        "%cat%Misc",
+        "/gallery/poetry/fable_of_covenant.html"
     ],
     "writing": [
         

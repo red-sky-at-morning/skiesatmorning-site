@@ -36,6 +36,17 @@ async function collectLocations(locs, limit) {
 
 async function handleWrapping(loc) {
     try {
+        if (loc.startsWith("%")) {
+            switch(loc.split("%")[1]) {
+                case "br":
+                    return "<br>"
+                case "cat":
+                    return headerWrapper.replace("%{category-title}", loc.split("%")[2])
+                default:
+                    return ""
+            }
+        }
+        console.log(loc)
         let page = await fetch(loc)
         if (!page.ok) {
             return null
@@ -43,26 +54,29 @@ async function handleWrapping(loc) {
         // console.log(await page.text())
         // <meta name="desc" type=(".*?") desc=(".*?").*>
         let text = await page.text()
-        let head = headRegex.exec(text)[0]
+        let head = new RegExp(headRegex.split("|")[0], headRegex.split("|")[1]).exec(text)[0]
         // console.log(text)
-        let match = dataRegex.exec(head)
-        let titleMatch = titleRegex.exec(head)
+        let match = new RegExp(dataRegex.split("|")[0], dataRegex.split("|")[1]).exec(head)
+        let titleMatch = new RegExp(titleRegex.split("|")[0], titleRegex.split("|")[1]).exec(head)
         // console.log(title)
         // console.log(match)
         if (match === null) {
+            console.log("no matches in head")
+            console.log(head)
             return null
         }
         if (titleMatch === null) {
+            console.log("no title")
             return null
         }
         // match.forEach((match, groupIndex) => {
         // console.log(`Found match, group ${groupIndex}: ${match}`);
         // })
 
-        let title = titleMatch[1].replace(" | red skies at morning", "")
+        let title = titleMatch[1].replace(" | red skies at morning", "").split(" - ").at(-1)
         let type = match[1].replaceAll("\"", "")
         let desc = match[2].replaceAll("\\n", "<br>").replaceAll("\"", "")
-        // console.log(title, type, desc)
+        console.log(title, type, desc)
 
 
         let content = mediaWrappers[type]
@@ -78,24 +92,21 @@ async function handleWrapping(loc) {
         return wrapper
 
     } catch (error) {
-        // console.error(error)
+        console.error(error)
         return null
     }
 }
 
-const headRegex = /<head>.*<\/head>/gms;
-const titleRegex = /<title>(.*?)<\/title>/gm;
-const dataRegex = /<meta name="desc" type=(".*?") desc=(".*?").*>/gm;
+const headRegex = "<head>.*?<\/head>|gms";
+const titleRegex = "<title>(.*?)<\/title>|gm";
+const dataRegex = "<meta.*name=\"desc\".*type=(\".*?\").*desc=(\".*?\").*>|gms";
 
 const articleWrapper = `
-<div class="article" style="width: 23vw">
+<div class="article" style="width: max(23vw); margin:1vw">
     <div class="article-header">
         <div class="article-header-tab">
             %{article-title}
         </div>
-        <a href="%{article-url}">
-            <div class="action-dot" style="background-color: #49ace3;"></div>
-        </a>
     </div>
     <div class="article-content">
         %{article-content}
@@ -103,11 +114,17 @@ const articleWrapper = `
 </div>
 `;
 
+const headerWrapper = `
+<div class="floating-text">
+<button><p style="margin:5px">%{category-title}</p></button>
+</div>
+`
+
 const mediaWrappers = {
     image: "<img src=$1>",
     gifv: "<img src=$1>",
     video: "<video src=$1>",
     audio: "<audio src=$1 type=audio/$2>",
     text: "<p>$1</p>",
-    text_short: "<p><i>$1</i></p>"
+    text_emph: "<p><i>$1</i></p>"
 }
