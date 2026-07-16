@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function readyInputs(inputs, encoder) {
-    fetch("/scripts/hashes.json").then(x => x.json()).then(data => {
+    fetch("/scripts/meta/hashes.json").then(x => x.json()).then(data => {
         let hashes = data;
         for (var i = 0; i < inputs.length; i++) {
             let input = inputs[i]
@@ -24,7 +24,7 @@ function readyInputs(inputs, encoder) {
                     let type = classes[2].split("-")
 
                     checkHash(val, hashes[index], encoder).then((result) => {
-                        console.log(result)
+                        // console.log(result)
                         if (!result) {
                             return
                         }

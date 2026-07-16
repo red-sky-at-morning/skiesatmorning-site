@@ -12,7 +12,8 @@
     <meta name="tags" content="gallery" />
     <!-- <meta name="layout" content="no-footer" /> -->
     <script src="/scripts/layout.js"></script>
-    <script src="/scripts/collapse.js" <!-- <script src="/scripts/feed.js"></script> -->
+    <script src="/scripts/collapse.js"></script>
+    <script src="/scripts/gallery.js"></script>
 </head>
 
 <body>
@@ -46,58 +47,27 @@
         <div style="display:inline-block; width:80vw;">
             <div class="floating-text" id="art">
                 <button class="collapsable">
-                    <h1>Art</h1><i class="fa fa-chevron-down fa-xl" style="padding-bottom: 15px; vertical-align: bottom;"></i>
+                    <h1>Art</h1><i class="fa fa-chevron-down fa-xl" style="padding-bottom: 20px; margin-right:7px; vertical-align: bottom;"></i>
                 </button>
             </div>
             <div class="collapsable-content" id="art-container" style="background:none">
-                <div class="article" style="width: 20vw">
-                    <div class="article-header">
-                        <div class="article-header-tab">
-                            <a href="%">
-                                <h1>%{article-title}</h1>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="article-content">
-                        <p>%{article-content}</p>
-                    </div>
-                </div>
-                <div class="article" style="width: 20vw">
-                    <div class="article-header">
-                        <div class="article-header-tab">
-                            <a href="%">
-                                <h1>%{article-title}</h1>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="article-content">
-                        <p>%{article-content}</p>
-                    </div>
-                </div>
-                <div class="article" style="width: 20vw">
-                    <div class="article-header">
-                        <div class="article-header-tab">
-                            <a href="%">
-                                <h1>%{article-title}</h1>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="article-content">
-                        <p>%{article-content}</p>
-                    </div>
-                </div>
-                <div class="article" style="width: 20vw">
-                    <div class="article-header">
-                        <div class="article-header-tab">
-                            <a href="%">
-                                <h1>%{article-title}</h1>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="article-content">
-                        <p>%{article-content}</p>
-                    </div>
-                </div>
+                
+            </div>
+            <div class="floating-text" id="poems">
+                <button class="collapsable">
+                    <h1>Poems</h1><i class="fa fa-chevron-down fa-xl" style="padding-bottom: 20px; margin-right:7px; vertical-align: bottom;"></i>
+                </button>
+            </div>
+            <div class="collapsable-content" id="poetry-container" style="background:none">
+                
+            </div>
+            <div class="floating-text" id="Writing">
+                <button class="collapsable">
+                    <h1>Writing</h1><i class="fa fa-chevron-down fa-xl" style="padding-bottom: 20px; margin-right:7px; vertical-align: bottom;"></i>
+                </button>
+            </div>
+            <div class="collapsable-content" id="writing-container" style="background:none">
+                
             </div>
         </div>
     </div>

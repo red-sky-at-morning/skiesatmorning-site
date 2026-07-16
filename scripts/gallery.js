@@ -1,45 +1,101 @@
-// writing this myself because i cant think of a better way to do this <3
-
 document.addEventListener("DOMContentLoaded", function () {
-    let feedEl = document.getElementById("feed-container")
+    const artFeed = document.getElementById("art-container")
+    const poemFeed = document.getElementById("poetry-container")
+    const essayFeed = document.getElementById("writing-container")
+    const limit = 18
 
-    let feed
-    getFeed().then(
-        function (value) {
-            feed = formatData(value, feedEl)
-            // feedEl.appendChild(feed)
-        },
-        function (error) {
-            feed = getError(error)
-            feedEl.appendChild(feed)
-        }
-    );
+    fetch("/scripts/meta/gallery.json").then(x => x.json()).then(data => {
+        let artLocs = data.art;
+        let poemLocs = data.poems;
+        let essayLocs = data.writing;
+
+        collectLocations(artLocs, limit).then(data => {
+            artFeed.innerHTML = data
+        })
+        collectLocations(poemLocs, limit).then(data => {
+            poemFeed.innerHTML = data
+        })
+        collectLocations(essayLocs, limit).then(data => {
+            essayFeed.innerHTML = data
+        })
+    });
 });
 
-async function getPageDesc(page) {
-    const post_limit = 30;
-    const url = `https://pink.skiesatmorning.com/api/v1/accounts/B0cp25N1v9cXFm9cLw/statuses?limit=${post_limit}`
-    try {
-        const response = await fetch(url)
+async function collectLocations(locs, limit) {
+    locs.slice(0, limit)
 
-        if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`)
+    let out = ""
+    for (var loc of locs) {
+        let data = await handleWrapping(loc)
+        if (data !== null) {
+            out = out + data
         }
-        const result = await response.json()
-        return result
+    }
+    return out
+}
+
+async function handleWrapping(loc) {
+    try {
+        let page = await fetch(loc)
+        if (!page.ok) {
+            return null
+        }
+        // console.log(await page.text())
+        // <meta name="desc" type=(".*?") desc=(".*?").*>
+        let text = await page.text()
+        let head = headRegex.exec(text)[0]
+        // console.log(text)
+        let match = dataRegex.exec(head)
+        let titleMatch = titleRegex.exec(head)
+        // console.log(title)
+        // console.log(match)
+        if (match === null) {
+            return null
+        }
+        if (titleMatch === null) {
+            return null
+        }
+        // match.forEach((match, groupIndex) => {
+        // console.log(`Found match, group ${groupIndex}: ${match}`);
+        // })
+
+        let title = titleMatch[1].replace(" | red skies at morning", "")
+        let type = match[1].replaceAll("\"", "")
+        let desc = match[2].replaceAll("\\n", "<br>").replaceAll("\"", "")
+        // console.log(title, type, desc)
+
+
+        let content = mediaWrappers[type]
+        content = content.replace("$1", desc)
+        // if (type == "audio") {
+        // content = content.replace("$2", meta.audio_encode)
+        // }
+
+        let wrapper = articleWrapper
+            .replace("%{article-title}", `<a href='${loc}'><h1>${title}</h1></a>`)
+            .replace("%{article-content}", content)
+            .replace("%{article-url}", loc)
+        return wrapper
 
     } catch (error) {
-        console.error(error.message)
-        return error;
+        // console.error(error)
+        return null
     }
 }
 
+const headRegex = /<head>.*<\/head>/gms;
+const titleRegex = /<title>(.*?)<\/title>/gm;
+const dataRegex = /<meta name="desc" type=(".*?") desc=(".*?").*>/gm;
+
 const articleWrapper = `
-<div class="article" style="width: 20vw">
+<div class="article" style="width: 23vw">
     <div class="article-header">
         <div class="article-header-tab">
             %{article-title}
         </div>
+        <a href="%{article-url}">
+            <div class="action-dot" style="background-color: #49ace3;"></div>
+        </a>
     </div>
     <div class="article-content">
         %{article-content}
@@ -51,38 +107,7 @@ const mediaWrappers = {
     image: "<img src=$1>",
     gifv: "<img src=$1>",
     video: "<video src=$1>",
-    audio: "<audio src=$1 type=audio/$2>"
-}
-
-function formatData(data, feed) {
-    if (!(data.constructor === Array)) {
-        return getError("Got a response from api call that was not an array (we think)")
-    }
-
-    console.log(data)
-
-    let htmlString = ""
-    data.forEach(element => {
-        let title = `<img src=${element.account.avatar} style="max-width:25px;max-height:25px;"><p><a href=${element.url} style="padding-vertical:-2px;">${element.account.display_name}</a></p>`
-        let content = `<p>${element.content}</p>`
-        let mediaString = ""
-        if (element.media_attachments) {
-            console.log(element.media_attachments)
-            element.media_attachments.forEach(attachment => {
-                let wrapper = mediaWrappers[attachment.type]
-                wrapper = wrapper.replace("$1", attachment.url)
-                if (attachment.type == "audio") {
-                    wrapper = wrapper.replace("$2", attachment.meta.audio_encode)
-                }
-                mediaString = mediaString + wrapper
-            })
-        }
-
-        htmlString = htmlString + articleWrapper.replace("%{article-title}", title).replace("%{article-content}", content + mediaString)
-    });
-    feed.innerHTML = htmlString
-}
-
-function getError(el) {
-    return `<p>${el}</p>`
+    audio: "<audio src=$1 type=audio/$2>",
+    text: "<p>$1</p>",
+    text_short: "<p><i>$1</i></p>"
 }

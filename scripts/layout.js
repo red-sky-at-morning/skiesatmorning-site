@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (TypeError) {
     }
 
-    console.log(els)
+    (els)
     if (!els.includes("no-header")) {
         document.body.insertAdjacentHTML("afterbegin", headerEl);
     }
@@ -37,9 +37,9 @@ function initActiveLinks() {
             // other pages
             if (elHref != "/" && elHref != "/index.html") {
                 // console.log(elHref)
-                console.log(window.location.protocol + window.location.host + elHref)
+                // console.log(window.location.protocol + window.location.host + elHref)
                 if (window.location.href.startsWith(window.location.protocol + "//" + window.location.host + elHref)) {
-                    console.log("active")
+                    // console.log("active")
                     el.classList.add("active");
                 }
             }
@@ -100,7 +100,7 @@ function motd() {
         mainTag = "_";
     }
     var out;
-    fetch("/scripts/meta.json").then(x => x.json()).then(data => {
+    fetch("/scripts/meta/meta.json").then(x => x.json()).then(data => {
         let messages = data.messages;
         // console.log(messages);
         out = messages[mainTag];

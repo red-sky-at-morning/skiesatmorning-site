@@ -454,12 +454,17 @@ button.collapsable h2 {
 }
 
 .floating-text button {
-    background-color:#00000000;
+    background-color:#24273ac0;
     border-color:#00000000;
     font-family: Miracode;
-    color:#f4bd29;
+    color:#cad3f5;
     display:inline-block;
-    text-shadow: 1px 1px 2px #c48d00;
+    /* text-shadow: 1px 1px 2px #c48d00; */
+}
+
+.floating-text button h1 {
+    color: #cad3f5;
+    margin: 5px;
 }
 
 /* Background */
