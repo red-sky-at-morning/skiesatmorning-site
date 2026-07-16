@@ -144,6 +144,11 @@ body .content {
     text-decoration: none;
 }
 
+.article a.active {
+    color: #cad3f5;
+    text-decoration: none;
+}
+
 .article input {
     border-radius: 8px;
     background-color: #ab0936;
@@ -252,11 +257,18 @@ vl {
     height: 75%;
 }
 
-#feed-container {
+#feed-container{
     /* background-color:#ff0000; */
     display: inline-grid;
     grid-template-columns: repeat(auto-fill, min(25vw, 500px));
-    padding-top: 75px;
+    /* padding-top: 75px; */
+}
+
+#art-container {
+    display:inline-flex;
+    flex-wrap:wrap;
+    align-content:flex-start;
+    /* width:; */
 }
 
 #header {
@@ -376,7 +388,7 @@ vl {
 
 .collapsable {
     display: inline-block;
-    width:100%;
+    /* width:100%; */
 }
 .collapsable hr {
     display:inline-block;
@@ -407,7 +419,7 @@ button.footer-toggle {
     border: none;
 }
 
-button.collapsible {
+button.collapsable {
     display: block;
     margin: 7px;
     color: #f4bd29;
@@ -419,7 +431,7 @@ button.collapsible {
     font-size:14px;
 }
 
-button.collapsible h1 {
+button.collapsable h1 {
     display: inline-block;
     color: #f4bd29;
     background-color: #00000000;
@@ -428,13 +440,26 @@ button.collapsible h1 {
     font-family:Miracode;
 }
 
-button.collapsible h2 {
+button.collapsable h2 {
     display: inline-block;
     color: #f4bd29;
     background-color: #00000000;
     margin: 5px 0px;
 
     font-family:Miracode;
+}
+
+.floating-text {
+    display:block;
+}
+
+.floating-text button {
+    background-color:#00000000;
+    border-color:#00000000;
+    font-family: Miracode;
+    color:#f4bd29;
+    display:inline-block;
+    text-shadow: 1px 1px 2px #c48d00;
 }
 
 /* Background */
