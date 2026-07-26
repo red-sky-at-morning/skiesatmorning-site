@@ -28,15 +28,32 @@ function readyInputs(inputs, encoder) {
                         if (!result) {
                             return
                         }
-                        switch(type[0]) {
+                        switch (type[0]) {
                             case "redirect":
-                                window.location.replace("/"+type[1])
+                                window.location = ("/" + type[1])
+                                break
+                            case "redirect_secure":
+                                // let x = document.cookie
+                                let uuid = getCookie("uuid")
+                                if (!uuid) {
+                                    uuid = window.crypto.randomUUID()
+                                    setCookie("uuid", uuid, 7)
+                                }
+                                // console.log(document.cookie)
+                                let hash = stringToInt(type[1].replace(".html", "")) * stringToInt(uuid)
+                                // alert(type[1].replace(".html", "") + " " + uuid + ": " + hash)
+                                setCookie("hash", hash, 7)
+                                // console.log(hash)
+                                window.location = ("/"+type[1])
+                                break
                             case "alert":
                                 alert(type[1].replace("_", " "))
+                                break
                             case "default":
                                 console.log("unexpected password field type")
+                                break
                         }
-                        }
+                    }
                     )
                 }
             }
@@ -51,4 +68,35 @@ async function checkHash(val, hash, encoder) {
     let hashHex = new Uint8Array(newHash).toHex()
 
     return (hashHex === hash)
+}
+
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function stringToInt(str) {
+    let array = Array.from(str)
+    return array.map(function (e) {
+        return e.charCodeAt(0)
+    }).reduce((partialSum, a) => partialSum + a, 0);
 }
