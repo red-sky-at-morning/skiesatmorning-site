@@ -61,14 +61,14 @@ body .content {
     color: #cad3f5;
     font-family: Miracode;
     font-size: 18px;
-    margin:8px;
+    margin: 8px;
 }
 
 .article h2 {
     color: #cad3f5;
     font-family: Miracode;
     font-size: 17px;
-    margin:8px;
+    margin: 8px;
 }
 
 .article-header h1 {
@@ -112,7 +112,7 @@ body .content {
 .hori-scroll {
     white-space: nowrap;
     overflow-x: overlay;
-    min-height:max-content;
+    min-height: max-content;
 }
 
 .hori-scroll::webkit-scrollbar {
@@ -154,8 +154,8 @@ body .content {
     background-color: #ab0936;
     /* border-color: #cb2956; */
     border: #cb2956 2px solid;
-    font-family:FiraCode;
-    margin:4px;
+    font-family: FiraCode;
+    margin: 4px;
 }
 
 .article input::placeholder {
@@ -165,7 +165,7 @@ body .content {
 .article code {
     background-color: #1e2030;
     border-radius: 5px;
-    padding:4px;
+    padding: 4px;
 }
 
 .note {
@@ -185,21 +185,21 @@ body .content {
 }
 
 .article ul {
-    padding-left:0px
+    padding-left: 0px
 }
 
 .article li {
     color: #cad3f5;
     margin: 8px;
-    list-style-type:none;
+    list-style-type: none;
 }
 
 .article li:before {
-    content:"- "
+    content: "- "
 }
 
 .article li.li-1 {
-    color:#cb2956;
+    color: #cb2956;
 }
 
 .article li.li-1:before {
@@ -207,7 +207,7 @@ body .content {
 }
 
 .article li.li-2 {
-    color:#ea8526;
+    color: #ea8526;
 }
 
 .article li.li-2:before {
@@ -215,7 +215,7 @@ body .content {
 }
 
 .article li.li-3 {
-    color:#f4bd29;
+    color: #f4bd29;
 }
 
 .article li.li-3:before {
@@ -223,7 +223,7 @@ body .content {
 }
 
 .article li.li-4 {
-    color:#991c8d;
+    color: #991c8d;
 }
 
 .article li.li-4:before {
@@ -241,12 +241,43 @@ body .content {
 
 .vl {
     height: 75%;
-    width:5px;
+    width: 5px;
     margin: 20px 0px;
     border-radius: 15px;
-    display:inline-block;
+    display: inline-block;
     box-sizing: border-box;
-    background-color:#c4ad09;
+    background-color: #c4ad09;
+}
+
+.subsonic-song-container {
+    background-color: #1e2030;
+
+    /* padding: 10px; */
+    border-radius: 15px;
+    margin: 10px 5px;
+
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 110%;
+    background-position: center;
+
+    backdrop-filter: blur(8px);
+}
+
+.subsonic-song-container img {
+    height: 75px;
+    /* float:left; */
+}
+
+.subsonic-song-container p {
+    font-size: 12px;
+    /* color:black */
+}
+
+.subsonic-background {
+    backdrop-filter: blur(4px) brightness(60%);
+    border-radius: 15px;
+    padding: 8px;
 }
 
 /* Header */
@@ -257,7 +288,7 @@ vl {
     height: 75%;
 }
 
-#feed-container{
+#feed-container {
     /* background-color:#ff0000; */
     display: inline-grid;
     grid-template-columns: repeat(auto-fill, min(25vw, 500px));
@@ -265,9 +296,9 @@ vl {
 }
 
 #art-container {
-    display:inline-flex;
-    flex-wrap:wrap;
-    align-content:flex-start;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
     /* width:; */
 }
 
@@ -339,7 +370,7 @@ vl {
     position: fixed;
     height: 40px;
     /* width:100%; */
-    width:fit-content;
+    width: fit-content;
     bottom: 0;
     left: 0;
 
@@ -366,7 +397,7 @@ vl {
     display: inline-block;
     height: 75%;
     /* margin-top: 8px; */
-    margin:5px
+    margin: 5px
 }
 
 #footer p {
@@ -390,15 +421,16 @@ vl {
     display: inline-block;
     /* width:100%; */
 }
+
 .collapsable hr {
-    display:inline-block;
-    width:90%;
+    display: inline-block;
+    width: 90%;
 }
 
 .collapsable-content {
     background-color: #1e2030;
-    border-radius:10px;
-    padding:10px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 button {
@@ -410,7 +442,7 @@ button {
 
 button.footer-toggle {
     display: inline-block;
-    margin:8px;
+    margin: 8px;
     /* margin-left: 2px; */
     /* margin-top: 10px; */
     /* margin-right: 10px; */
@@ -427,8 +459,8 @@ button.collapsable {
     background-color: #00000000;
     border: none;
 
-    font-family:Miracode;
-    font-size:14px;
+    font-family: Miracode;
+    font-size: 14px;
 }
 
 button.collapsable h1 {
@@ -437,7 +469,7 @@ button.collapsable h1 {
     background-color: #00000000;
     margin: 0px;
 
-    font-family:Miracode;
+    font-family: Miracode;
 }
 
 button.collapsable h2 {
@@ -446,19 +478,19 @@ button.collapsable h2 {
     background-color: #00000000;
     margin: 5px 0px;
 
-    font-family:Miracode;
+    font-family: Miracode;
 }
 
 .floating-text {
-    display:block;
+    display: block;
 }
 
 .floating-text button {
-    background-color:#24273ac0;
-    border-color:#00000000;
+    background-color: #24273ac0;
+    border-color: #00000000;
     font-family: Miracode;
-    color:#cad3f5;
-    display:inline-block;
+    color: #cad3f5;
+    display: inline-block;
     /* text-shadow: 1px 1px 2px #c48d00; */
 }
 

@@ -34,17 +34,18 @@ function readyInputs(inputs, encoder) {
                                 break
                             case "redirect_secure":
                                 // let x = document.cookie
+                                let url = "/" + type[1]
                                 let uuid = getCookie("uuid")
                                 if (!uuid) {
                                     uuid = window.crypto.randomUUID()
                                     setCookie("uuid", uuid, 7)
                                 }
                                 // console.log(document.cookie)
-                                let hash = stringToInt(type[1].replace(".html", "")) * stringToInt(uuid)
+                                let hash = stringToInt(url.replace(".html", "")) * stringToInt(uuid)
                                 // alert(type[1].replace(".html", "") + " " + uuid + ": " + hash)
                                 setCookie("hash", hash, 7)
                                 // console.log(hash)
-                                window.location = ("/"+type[1])
+                                window.location = (url)
                                 break
                             case "alert":
                                 alert(type[1].replace("_", " "))
@@ -98,5 +99,5 @@ function stringToInt(str) {
     let array = Array.from(str)
     return array.map(function (e) {
         return e.charCodeAt(0)
-    }).reduce((partialSum, a) => partialSum + a, 0);
+    }).reduce((partialSum, a) => (partialSum * a));
 }
