@@ -25,7 +25,7 @@ function load(el) {
                 .replaceAll("%cover_art", data[i][4])
                 .replaceAll("%title", data[i][1])
                 .replaceAll("%artist", data[i][2])
-                .replaceAll("%album", data[i][3])
+                .replaceAll("%album", data[i][3].replace("[Unknown Album]", ""))
         }
         el.innerHTML = repl_html
     })

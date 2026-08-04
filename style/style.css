@@ -280,6 +280,31 @@ body .content {
     padding: 8px;
 }
 
+.front-chip {
+    background-color: #1e2030;
+    padding: 5px 10px;
+    border-radius: 15px;
+    width:fit-content;
+    display:inline-block;
+}
+.front-chip p {
+    font-size: 10px;
+    margin: 1px;
+    display:inline-block;
+}
+
+.small-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0px 3px 0px 8px;
+    /* margin-right: 20px; */
+    /* margin-top: 20px; */
+    /* background-color: #cb2956; */
+    display:inline-block;
+    vertical-align: middle;
+}
+
 /* Header */
 vl {
     background-color: #24273a;
